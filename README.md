@@ -24,9 +24,6 @@ To run the MERN Stack Blog application locally, follow these steps:
 
 1. **Clone the repository:**
 
-   ```sh
-   git clone https://github.com/your-username/your-mern-blog.git
-   ```
 
 2. **Navigate to the project directory:**
 
