@@ -13,16 +13,21 @@ export default function Register() {
     e.preventDefault();
     try {
       setError(false);
-      const res = await axios.post("/api/auth/register", {
+      console.log("Request Payload:", { username, email, password });
+
+      const res = await axios.post("/auth/register", {
         username,
         email,
         password,
       });
+      console.log("Response from the server:", res.data);
+
       res.data && window.location.replace("/login");
     } catch (err) {
       setError(true);
     }
   };
+
   return (
     <div className="register">
       <span className="registerTitle">Register</span>

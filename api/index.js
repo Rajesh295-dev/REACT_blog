@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
@@ -11,9 +12,11 @@ const path = require("path");
 const { clog } = require("./util/clog");
 
 
-const PORT = 3001
+const PORT = 3007
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(cors());
 app.use(clog);
 
 

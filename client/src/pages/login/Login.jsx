@@ -1,5 +1,6 @@
 import axios from "axios";
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Context } from "../../components/context/Context";
 import "./login.css";
@@ -24,6 +25,11 @@ export default function Login() {
     }
   };
 
+  const [showPassword, setShowPassword] = useState(false);
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <div className="login">
       <span className="loginTitle">Login</span>
@@ -37,12 +43,26 @@ export default function Login() {
         />
 
         <label>Password</label>
-        <input
+        <div className="passwordInputContainer">
+          <input
+            type={showPassword ? "text" : "password"}
+            className="loginInput"
+            placeholder="Enter your Password.."
+            ref={passwordRef}
+          />
+          <span
+            className="passwordToggleIcon"
+            onClick={togglePasswordVisibility}
+          >
+            {showPassword ? <FaEyeSlash /> : <FaEye />}
+          </span>
+        </div>
+        {/* <input
           type="Password"
           className="loginInput"
           placeholder="Enter your Password.."
           ref={passwordRef}
-        />
+        /> */}
         <button className="loginButton" type="submit" disabled={isFetching}>
           Login
         </button>

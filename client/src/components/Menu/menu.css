@@ -1,0 +1,30 @@
+.topCenterMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  margin-top: 5px;
+  right: 0;
+}
+
+.topListMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  background-color: tomato;
+  position: absolute;
+  margin-top: 5px;
+  width: 50%;
+  right: 0;
+  font-size: x-large;
+  height: calc(100vh - 30rem /* 96px */);
+}
+.topListItemMenu {
+  margin-top: 5px;
+  padding-top: 32px;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  list-style: none;
+}

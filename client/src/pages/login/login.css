@@ -8,7 +8,7 @@
       rgba(255, 255, 255, 0.3),
       rgba(255, 255, 255, 0.3)
     ),
-    url("http://blogs.uwa.edu.au/austech/files/2018/06/5-Best-Content-Writing-Tools-to-Write-Killer-Blog-Post.png");
+    url("https://miro.medium.com/v2/resize:fit:8000/1*Lyrhjupug-Z7bVN2cuJYxA.jpeg");
   background-size: cover;
 }
 
@@ -32,6 +32,10 @@
   border: none;
 }
 
+.passwordToggleIcon {
+  margin-left: 5px;
+}
+
 .loginButton {
   margin-top: 20px;
   cursor: pointer;
@@ -42,7 +46,7 @@
   padding: 10px;
 }
 
-.loginButton:disabled{
+.loginButton:disabled {
   cursor: not-allowed;
   background-color: rgb(252, 173, 173);
 }

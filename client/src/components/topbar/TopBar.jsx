@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../context/Context";
 import "./topbar.css";
+import Menu from "../Menu/Menu";
 
 //import ProfilePicture from "../ProfilePic";
 export default function TopBar() {
@@ -14,7 +15,7 @@ export default function TopBar() {
   };
 
   return (
-    <div className="top">
+    <div className={user ? "top withGap" : "top"}>
       <div className="topLeft">
         <i className="topIcon fab fa-facebook-square"></i>
         <i className="topIcon fab fa-twitter-square"></i>
@@ -73,6 +74,9 @@ export default function TopBar() {
           )
         }
         <i className="topSearchIcon fas fa-search"></i>
+        <div className="mediumSize">
+          <Menu />
+        </div>
       </div>
     </div>
   );

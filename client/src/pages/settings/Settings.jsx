@@ -57,6 +57,7 @@ export default function Settings() {
       setUsername(user.username);
     }
  */
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     dispatch({ type: "UPDATE_START" });
