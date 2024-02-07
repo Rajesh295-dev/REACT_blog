@@ -16,7 +16,13 @@ const PORT = process.env.REACT_APP_PORT || 3007
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(cors());
+app.use(cors(
+    {
+        origin: ["https://react-blog-flax.vercel.app"],
+        methods: ["POST, GET"],
+        credentials: true
+    }
+));
 app.use(clog);
 
 
