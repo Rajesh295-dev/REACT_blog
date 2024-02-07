@@ -2,20 +2,33 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { Context } from "../../components/context/Context";
 import "./write.css";
+import Category from "../../components/category/Category";
 
 export default function Write() {
   const [title, setTitle] = useState("");
+  const [category, setCategory] = useState("");
   const [desc, setDesc] = useState("");
   const [file, setFile] = useState(null);
   const { user } = useContext(Context);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const newPost = {
       username: user.username,
       title,
       desc,
+      categories: category,
     };
+
+    if (category) {
+      try {
+        await axios.post("/categories", { name: category });
+        console.log("New category added successfully!");
+      } catch (error) {
+        console.error("Error adding new category:", error);
+      }
+    }
 
     if (file) {
       try {
@@ -44,6 +57,11 @@ export default function Write() {
     }
   };
 
+  const handleSelectedData = (categoryData) => {
+    //console.log("Selected or new category:", categoryData);
+    setCategory(categoryData);
+  };
+
   return (
     <div className="write">
       {file && (
@@ -66,11 +84,12 @@ export default function Write() {
             placeholder="Title"
             type="text"
             id="Title"
-            className="writeInput"
+            className="writeInput "
             autoFocus={true}
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
+
         <div className="writeFormGroup">
           <textarea
             placeholder="Share your story...."
@@ -79,6 +98,9 @@ export default function Write() {
             onChange={(e) => setDesc(e.target.value)}
           ></textarea>
         </div>
+
+        <Category onSelectedData={handleSelectedData} />
+
         <button className="writeSubmit" type="submit">
           Publish
         </button>

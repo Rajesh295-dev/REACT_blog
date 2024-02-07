@@ -12,7 +12,7 @@ export default function Settings() {
   const [success, setSuccess] = useState(false);
 
   const { user, dispatch } = useContext(Context);
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  // const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
   /*
   //old lines of codes

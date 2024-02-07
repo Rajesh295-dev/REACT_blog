@@ -1,0 +1,12 @@
+.category {
+  display: flex;
+  flex-direction: column;
+}
+.dropdown {
+  position: absolute;
+  top: 100%; /* Position dropdown below the input */
+  left: 10;
+  width: 100%;
+  color: black;
+  border-top: none; /* Remove border on top to make it seamless */
+}

@@ -4,11 +4,8 @@ import { Context } from "../context/Context";
 import "./topbar.css";
 import Menu from "../Menu/Menu";
 
-//import ProfilePicture from "../ProfilePic";
 export default function TopBar() {
   const { user, dispatch } = useContext(Context);
-  // const PF = process.env.REACT_APP_PUBLIC_FOLDER;
-  // console.log(PF);
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
