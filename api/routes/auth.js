@@ -9,6 +9,7 @@ const bcrypt = require("bcrypt");
 //LOGIN
 
 router.post("/login", async (req, res) => {
+    console.log("Request login Body:", req.body);
     const inputPassword = req.body.password;
 
     try {
