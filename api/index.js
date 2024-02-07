@@ -13,10 +13,8 @@ const { clog } = require("./util/clog");
 
 
 //for localhost 
-// const PORT = process.env.REACT_APP_PORT || 3007
-
-const PORT = process.env.REACT_APP_PORT
-console.log(port)
+const PORT = process.env.REACT_APP_PORT || 3007
+//console.log("this is the port for backend 🛺", PORT)
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -31,6 +29,7 @@ app.use(clog);
 
 
 dotenv.config();
+
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,

@@ -42,7 +42,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "react-blog-api-theta.vercel.app",
+  "proxy": "https://react-blog-api-theta.vercel.app/api/",
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
