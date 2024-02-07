@@ -68,18 +68,6 @@ export default function Settings() {
       password,
     };
 
-    // if (file) {
-    //   const data = new FormData();
-    //   // const filename = Date.now() + file.name;
-    //   // data.append("name", filename);
-    //   // data.append("file", file);
-    //   // updatedUser.profilePic = filename;
-
-    //   try {
-    //     await axios.post("/upload", data);
-    //   } catch (err) {}
-    // }
-
     if (file) {
       try {
         const formData = new FormData();

@@ -12,6 +12,7 @@ export default function SideBar() {
     };
     getCats();
   }, []);
+
   return (
     <div className="sidebar">
       <div className="sidebarItem">
@@ -30,12 +31,21 @@ export default function SideBar() {
       </div>
       <div className="sidebarItem">
         <span className="sidebarTitle">CATEGORIES</span>
-        <ul className="sidebarList">
+
+        {/* <ul className="sidebarList">
           {cats.map((c) => (
             <Link key={`${c.name}`} to={`/?cat=${c.name}`} className="link">
               <li className="sidebarListItem">{c.name}</li>
             </Link>
           ))}
+        </ul> */}
+        <ul className="sidebarList">
+          {Array.isArray(cats) &&
+            cats.map((c) => (
+              <Link key={`${c.name}`} to={`/?cat=${c.name}`} className="link">
+                <li className="sidebarListItem">{c.name}</li>
+              </Link>
+            ))}
         </ul>
       </div>
       <div className="sidebarItem">
