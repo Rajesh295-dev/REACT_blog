@@ -20,11 +20,12 @@ export default function SideBar() {
           src="https://images.all-free-download.com/images/graphiclarge/book_in_grass_605519.jpg"
           alt=""
         />
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque,
-          aliquam. Esse quidem amet aliquid rerum vitae explicabo quos eveniet
-          illum harum culpa. A veritatis nulla fuga unde! Porro, corrupti
-          aspernatur?
+        <p className="introPara">
+          This BLOG application empowers users to effortlessly create, manage,
+          and share their unique content in a visually appealing and
+          user-friendly environment. With a clean and intuitive interface, users
+          can easily navigate through the application, sign up for accounts, and
+          log in securely.
         </p>
       </div>
       <div className="sidebarItem">

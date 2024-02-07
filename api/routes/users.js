@@ -7,6 +7,7 @@ const bcrypt = require('bcrypt');
 
 //UPDATE
 router.put("/:id", async (req, res) => {
+
     if (req.body.userId === req.params.id) {
         if (req.body.password && req.body.password !== '') {
             console.log('updating password')
@@ -25,6 +26,7 @@ router.put("/:id", async (req, res) => {
                     });
 
                 res.status(200).json(updatedUser);
+                console.log("updated value .....", updatedUser)
 
 
             } catch (err) {

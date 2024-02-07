@@ -7,8 +7,8 @@ import Menu from "../Menu/Menu";
 //import ProfilePicture from "../ProfilePic";
 export default function TopBar() {
   const { user, dispatch } = useContext(Context);
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
-  console.log(PF);
+  // const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  // console.log(PF);
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
@@ -55,7 +55,7 @@ export default function TopBar() {
           /* Conditional Render for Profile Pic */
           user ? (
             <Link to="/settings">
-              <img className="topImg" src={PF + user.profilePic} alt="" />
+              <img className="topImg" src={user.profilePic} alt="" />
             </Link>
           ) : (
             <ul className="topList">

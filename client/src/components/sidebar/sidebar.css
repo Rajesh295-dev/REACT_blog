@@ -36,6 +36,7 @@
 }
 .sidebarItem > p {
   padding: 30px;
+  text-align: justify;
 }
 .sidebarList {
   list-style: none;

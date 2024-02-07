@@ -68,17 +68,35 @@ export default function Settings() {
       password,
     };
 
-    if (file) {
-      const data = new FormData();
-      const filename = Date.now() + file.name;
-      data.append("name", filename);
-      data.append("file", file);
-      updatedUser.profilePic = filename;
+    // if (file) {
+    //   const data = new FormData();
+    //   // const filename = Date.now() + file.name;
+    //   // data.append("name", filename);
+    //   // data.append("file", file);
+    //   // updatedUser.profilePic = filename;
 
+    //   try {
+    //     await axios.post("/upload", data);
+    //   } catch (err) {}
+    // }
+
+    if (file) {
       try {
-        await axios.post("/upload", data);
-      } catch (err) {}
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("upload_preset", "reactBlog");
+
+        const res = await axios.post(
+          process.env.REACT_APP_CLOUDINARY_UPLOAD_URL,
+          formData
+        );
+        console.log("yo ho test", res.data.secure_url);
+        updatedUser.profilePic = res.data.secure_url;
+      } catch (error) {
+        console.error("Error uploading image:", error);
+      }
     }
+
     try {
       const res = await axios.put("/users/" + user._id, updatedUser);
       setSuccess(true);
@@ -99,9 +117,17 @@ export default function Settings() {
           <label>Profile Picture</label>
           <div className="settingsPP">
             <img
-              src={file ? URL.createObjectURL(file) : PF + user.profilePic}
+              src={file ? URL.createObjectURL(file) : user.profilePic}
               alt=""
             />
+
+            {/* {file && (
+              <img
+                className="writeImg"
+                src={URL.createObjectURL(file)}
+                alt=""
+              />
+            )} */}
 
             <label htmlFor="fileInput">
               <i className="settingsPPIcon far fa-user-circle"></i>

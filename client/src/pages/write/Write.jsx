@@ -18,25 +18,32 @@ export default function Write() {
     };
 
     if (file) {
-      const data = new FormData();
-      const filename = Date.now() + file.name;
-      data.append("name", filename);
-      data.append("file", file);
-      newPost.photo = filename;
       try {
-        await axios.post("/upload", data);
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("upload_preset", "reactBlog");
+
+        const res = await axios.post(
+          process.env.REACT_APP_CLOUDINARY_UPLOAD_URL,
+          formData
+        );
+
+        newPost.photo = res.data.secure_url;
       } catch (error) {
-        console.log("could not upload!🧐", error);
+        console.error("Error uploading image:", error);
       }
-      console.log("yo data ho", data);
     }
+
+    console.log(newPost);
+
     try {
       const res = await axios.post("/posts", newPost);
       window.location.replace("/post/" + res.data._id);
     } catch (error) {
-      console.log("could not upload!🧐", error);
+      console.error("Error publishing post:", error);
     }
   };
+
   return (
     <div className="write">
       {file && (

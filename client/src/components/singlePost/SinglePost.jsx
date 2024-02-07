@@ -6,7 +6,7 @@ import { Context } from "../context/Context";
 import "./singlePost.css";
 
 export default function SinglePost() {
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  // const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
   const { user } = useContext(Context);
   const location = useLocation();
@@ -49,7 +49,7 @@ export default function SinglePost() {
     <div className="singlePost">
       <div className="singlePostWrapper">
         {post.photo && (
-          <img className="singlePostImg" src={PF + post.photo} alt="" />
+          <img className="singlePostImg" src={post.photo} alt="" />
         )}
 
         {updateMode ? (

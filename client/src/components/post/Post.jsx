@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
-//import Posts from "../posts/Post";
 import "./post.css";
 
 export default function Post({ post }) {
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  //const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
   return (
     <div className="post">
-      {post.photo && <img className="postImg" src={PF + post.photo} alt="" />}
+      {/* {post.photo && <img className="postImg" src={PF + post.photo} alt="" />} */}
+
+      {post.photo && <img className="postImg" src={post.photo} alt="" />}
 
       <div className="postInfo">
         <div className="postCats">
