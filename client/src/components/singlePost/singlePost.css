@@ -1,11 +1,15 @@
-.singlePost {
+/* .singlePost {
   display: flex;
   width: 400px;
-}
-
-/* .singlePost {
-  flex: 9;
 } */
+
+.singlePost {
+  
+    display:flex;
+    flex:9;
+    margin: 20px;
+  
+}
 
 .singlePostWrapper {
   padding: 20px;
