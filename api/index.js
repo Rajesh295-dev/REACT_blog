@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors(
     {
         origin: ["https://react-blog-flax.vercel.app"],
-        methods: ["POST, GET"],
+        methods: ["POST, GET, PUT"],
         credentials: true
     }
 ));
