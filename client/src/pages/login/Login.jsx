@@ -16,7 +16,7 @@ export default function Login() {
     dispatch({ type: "LOGIN_START" });
     try {
       const res = await axios.post(
-        "https://react-blog-api-theta.vercel.app/api/auth/login",
+        `${process.env.REACT_APP_API_URL}/auth/login`,
         {
           username: userRef.current.value,
           password: passwordRef.current.value,

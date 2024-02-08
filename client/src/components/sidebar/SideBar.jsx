@@ -8,7 +8,7 @@ export default function SideBar() {
   useEffect(() => {
     const getCats = async () => {
       const res = await axios.get(
-        "https://react-blog-api-theta.vercel.app/api/categories"
+        ` ${process.env.REACT_APP_API_URL}/categories`
       );
       setCats(res.data);
     };

@@ -23,7 +23,9 @@ export default function Write() {
 
     if (category) {
       try {
-        await axios.post("/categories", { name: category });
+        await axios.post(`${process.env.REACT_APP_API_URL}/categories`, {
+          name: category,
+        });
         console.log("New category added successfully!");
       } catch (error) {
         console.error("Error adding new category:", error);
@@ -50,7 +52,10 @@ export default function Write() {
     console.log(newPost);
 
     try {
-      const res = await axios.post("/posts", newPost);
+      const res = await axios.post(
+        `${process.env.REACT_APP_API_URL}/posts`,
+        newPost
+      );
       window.location.replace("/post/" + res.data._id);
     } catch (error) {
       console.error("Error publishing post:", error);

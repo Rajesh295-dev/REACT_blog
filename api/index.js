@@ -12,8 +12,9 @@ const path = require("path");
 const { clog } = require("./util/clog");
 
 
-//for localhost 
+
 const PORT = process.env.REACT_APP_PORT || 3007
+
 //console.log("this is the port for backend 🛺", PORT)
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

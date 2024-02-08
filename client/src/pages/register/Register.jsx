@@ -15,7 +15,7 @@ export default function Register() {
       setError(false);
       console.log("Request Payload:", { username, email, password });
 
-      const res = await axios.post("/auth/register", {
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/auth/register`, {
         username,
         email,
         password,
