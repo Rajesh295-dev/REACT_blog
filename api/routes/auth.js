@@ -54,33 +54,50 @@ router.post("/login", async (req, res) => {
 
 
 //REGISTER
+// router.post("/register", async (req, res) => {
+//     console.log("Request Body:", req.body);
+//     try {
+//         // Extract input data from req.body
+//         const { username, email, password } = req.body;
+
+//         // Hash the password
+//         const salt = await bcrypt.genSalt(10);
+//         const hashedPass = await bcrypt.hash(password, salt);
+
+//         // Create a new User instance with hashed password
+//         const newUser = new User({
+//             username: username,
+//             email: email,
+//             password: hashedPass,
+//         });
+
+//         // Save the new user to the database
+//         const user = await newUser.save();
+//         //console.log("Stored Hashed Password:", user.password);
+
+//         // Respond with the registered user data
+//         res.status(200).json(user);
+//     } catch (err) {
+//         // Handle errors
+//         console.error("Error during registration:", err);
+//         res.status(500).json({ error: "Internal Server Error" });
+//     }
+// });
+//REGISTER
 router.post("/register", async (req, res) => {
-    console.log("Request Body:", req.body);
     try {
-        // Extract input data from req.body
-        const { username, email, password } = req.body;
-
-        // Hash the password
         const salt = await bcrypt.genSalt(10);
-        const hashedPass = await bcrypt.hash(password, salt);
-
-        // Create a new User instance with hashed password
+        const hashedPass = await bcrypt.hash(req.body.password, salt);
         const newUser = new User({
-            username: username,
-            email: email,
+            username: req.body.username,
+            email: req.body.email,
             password: hashedPass,
         });
 
-        // Save the new user to the database
         const user = await newUser.save();
-        //console.log("Stored Hashed Password:", user.password);
-
-        // Respond with the registered user data
         res.status(200).json(user);
     } catch (err) {
-        // Handle errors
-        console.error("Error during registration:", err);
-        res.status(500).json({ error: "Internal Server Error" });
+        res.status(500).json(err);
     }
 });
 
