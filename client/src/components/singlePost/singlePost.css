@@ -1,5 +1,5 @@
 .singlePost {
-  flex: 9;
+  flex: 6;
 }
 
 .singlePostWrapper {
@@ -97,10 +97,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .singlePostInfo {
-    padding: 10px;
-  }
-  .singlePostDescInput {
-    padding: 10px;
+  .singlePostWrapper {
+    padding: 20px;
   }
 }
