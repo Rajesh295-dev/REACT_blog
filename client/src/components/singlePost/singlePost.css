@@ -1,6 +1,11 @@
 .singlePost {
-  flex: 9;
+  display: flex;
+  width: 400px;
 }
+
+/* .singlePost {
+  flex: 9;
+} */
 
 .singlePostWrapper {
   padding: 20px;
