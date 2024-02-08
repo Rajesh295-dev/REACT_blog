@@ -4,11 +4,7 @@
 } */
 
 .singlePost {
-  
-    display:flex;
-    flex:9;
-    margin: 20px;
-  
+  flex: 9;
 }
 
 .singlePostWrapper {
