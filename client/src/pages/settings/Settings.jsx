@@ -167,7 +167,9 @@ export default function Settings() {
           )}
         </form>
       </div>
-      <SideBar />
+      <div className="settingSidebar">
+        <SideBar />
+      </div>
     </div>
   );
 }
