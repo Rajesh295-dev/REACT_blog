@@ -12,10 +12,9 @@ const path = require("path");
 const { clog } = require("./util/clog");
 
 
-
 const PORT = process.env.REACT_APP_PORT || 3007
-
 //console.log("this is the port for backend 🛺", PORT)
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -42,7 +41,7 @@ mongoose.connect(process.env.MONGO_URL, {
 
 
 //Serve static images
-app.use("/images", express.static(path.join(__dirname, "public/images")));
+// app.use("/images", express.static(path.join(__dirname, "public/images")));
 
 
 app.use("/api/auth", authRoute);

@@ -78,7 +78,7 @@ export default function Settings() {
           process.env.REACT_APP_CLOUDINARY_UPLOAD_URL,
           formData
         );
-        console.log("yo ho test", res.data.secure_url);
+        // console.log("test", res.data.secure_url);
         updatedUser.profilePic = res.data.secure_url;
       } catch (error) {
         console.error("Error uploading image:", error);
