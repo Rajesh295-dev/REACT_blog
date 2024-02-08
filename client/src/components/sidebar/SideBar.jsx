@@ -15,8 +15,6 @@ export default function SideBar() {
     getCats();
   }, []);
 
-  console.log("yo ho array test", cats);
-
   return (
     <div className="sidebar">
       <div className="sidebarItem">

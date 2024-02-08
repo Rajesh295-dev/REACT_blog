@@ -9,9 +9,7 @@ import { useLocation } from "react-router";
 export default function Home() {
   const [posts, setPosts] = useState([]);
   const { search } = useLocation();
-  console.log("New env value", process.env.REACT_APP_API_URL);
-  console.log("env value", process.env.REACT_APP_CLOUDINARY_UPLOAD_URL);
-
+  
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axios.get(
