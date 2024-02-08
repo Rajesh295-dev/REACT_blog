@@ -1,4 +1,9 @@
-.single{
-    display: flex;
+.single {
+  display: flex;
 }
 
+@media screen and (max-width: 600px) {
+  .settingSidebar {
+    display: none;
+  }
+}
