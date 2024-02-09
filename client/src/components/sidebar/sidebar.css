@@ -63,3 +63,9 @@
   margin: 10px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+}
